@@ -8,8 +8,7 @@
  * Created: Jun 18, 2017
  */
 
-DROP DATABASE IF EXISTS ser322Pantry;
-CREATE DATABASE ser322Pantry;
+CREATE DATABASE IF NOT EXISTS ser322Pantry;
 
 USE ser322Pantry;
 

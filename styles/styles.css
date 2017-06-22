@@ -1,0 +1,30 @@
+/* 
+ * SER 322 Team 14 Pantry Project
+ * Terin Champion
+ * Hajar Boughoula
+ * Nergal Givarkes
+ */
+/* 
+    Created on : Jun 21, 2017, 7:06:52 PM
+    Author     : Terin
+*/
+
+body {
+                background-color: maroon;
+            }
+            h1 {
+                background-color: gold;
+                color: maroon;
+                text-align: center;
+                }
+            h2 {
+                background-color: gold;
+                color: maroon;
+                text-align: center;
+                }
+            p {
+                text-align: center;
+            }
+            form {
+                text-align: center;
+            }
