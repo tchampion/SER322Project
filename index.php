@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 /* 
- * SER 322 Team 14 Pantry Project
+ * SER 322 Team 03 Pantry Project
  * Terin Champion
  * Hajar Boughoula
  * Nergal Givarkes
@@ -23,7 +23,7 @@
             require_once '/config/config.php';
         ?>
         <h1>Welcome to the SER322 Pantry Project</h1>
-        <h2>Created By Team 14</h2>
+        <h2>Created By Team 03</h2>
         <p>Select a user or create a new user.</p>
         <form action="pages/welcome.php" method="post">
             User Email:<br><input type="test" name="userEmail"><br>

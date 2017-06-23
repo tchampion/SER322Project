@@ -1,7 +1,7 @@
 <?php
 
 /* 
- * SER 322 Team 14 Pantry Project
+ * SER 322 Team 03 Pantry Project
  * Terin Champion
  * Hajar Boughoula
  * Nergal Givarkes

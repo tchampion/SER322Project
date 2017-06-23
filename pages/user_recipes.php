@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 /* 
- * SER 322 Team 14 Pantry Project
+ * SER 322 Team 03 Pantry Project
  * Terin Champion
  * Hajar Boughoula
  * Nergal Givarkes
@@ -24,7 +24,7 @@
         
         ?>
    
-    <h1  style="color: maroon; background-color: gold; text-align: center;"; >--User Recipe--</h1>
+    <h1  style="color: maroon; background-color: gold; text-align: center;"; >--User Recipes--</h1>
     
     <table style="border: 0px; margin: 0px auto;">
     
