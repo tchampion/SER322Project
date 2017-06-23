@@ -86,20 +86,70 @@ CREATE TABLE pantry(
     pantry_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL REFERENCES users(user_id),
     PRIMARY KEY(pantry_id, user_id));
-    
+INSERT INTO pantry
+	(`Pantry ID`, `User ID`)
+VALUES
+	(1, 1),
+	(2, 2),
+	(3, 3),
+	(3, 5),
+	(4, 4),
+	(4, 6);
+
 CREATE TABLE pantry_item(
     pantry_id INT UNSIGNED NOT NULL REFERENCES pantry(pantry_id),
     item_id INT UNSIGNED NOT NULL REFERENCES item(item_id),
     amount INT UNSIGNED NOT NULL,
     PRIMARY KEY(pantry_id, item_id));
+INSERT INTO pantry_item
+	(`Pantry ID`, `Item ID`, `Amount`)
+VALUES
+	(1, 1, 1),
+	(1, 2, 2),
+	(1, 3, 1),
+	(1, 4, 1),
+	(1, 5, 5),
+	(1, 6, 3),
+	(2, 3, 1),
+	(2, 6, 2),
+	(3, 1, 1),
+	(3, 4, 1),
+	(4, 2, 4),
+	(4, 5, 10);
     
 CREATE TABLE shopping_list(
     shopping_list_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL REFERENCES users(user_id),
     PRIMARY KEY(shopping_list_id, user_id));
+INSERT INTO shopping_list
+	(`Shopping List ID`, `User ID`)
+VALUES
+	(1, 1),
+	(2, 2),
+	(3, 3),
+	(3, 5),
+	(4, 4),
+	(4, 6);
     
 CREATE TABLE shopping_list_item(
     shopping_list_id INT UNSIGNED NOT NULL REFERENCES shopping_list(shopping_list_id),
     item_id INT UNSIGNED NOT NULL REFERENCES item(item_id),
     amount INT UNSIGNED NOT NULL,
     PRIMARY KEY(shopping_list_id, item_id));
+INSERT INTO shopping_list_item
+	(`Shopping List ID`, `Item ID`, `Amount`)
+VALUES
+	(1, 2, 2),
+	(1, 6, 2),
+	(2, 1, 1),
+	(2, 2, 2),
+	(2, 4, 1),
+	(2, 5, 4),
+	(3, 2, 2),
+	(3, 3, 1),
+	(3, 5, 4),
+	(3, 6, 4),
+	(4, 1, 2),
+	(4, 3, 2);
+	(4, 4, 1),
+	(4, 6, 6);
