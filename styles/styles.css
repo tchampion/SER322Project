@@ -51,4 +51,49 @@ form {
     background-color: gold;
     color: maroon;
 }
+#table1{
+    border: 0;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+}
+
+#tr1{
+    color: maroon;
+    background: gold;
+    
+}
+#td2{
+    color: gold;
+    
+}
+#td3{
+    text-align: center;
+    
+}
+#td4{
+    width: 150px;
+    text-align: center;
+}
+#td5{
+    width: 15px;
+    text-align: center;
+}
+#input1{
+    float: right;
+    
+}
+#td1{
+    width: 300px;
+    text-align: center;
+    
+    
+}
+#Home{
+    
+    float: right;
+    margin: 150px 100px 0 0;
+    color: white;
+    
+}
 
