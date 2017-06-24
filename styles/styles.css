@@ -10,21 +10,45 @@
 */
 
 body {
-                background-color: maroon;
-            }
-            h1 {
-                background-color: gold;
-                color: maroon;
-                text-align: center;
-                }
-            h2 {
-                background-color: gold;
-                color: maroon;
-                text-align: center;
-                }
-            p {
-                text-align: center;
-            }
-            form {
-                text-align: center;
-            }
+    background-color: maroon;
+}
+h1 {
+    background-color: gold;
+    color: maroon;
+    text-align: center;
+    }
+h2 {
+    background-color: gold;
+    color: maroon;
+    text-align: center;
+    }
+p {
+    text-align: center;
+}
+form {
+    text-align: center;
+}
+
+.topnav{
+    background-color: black;
+    overflow: hidden;
+    position: relative; 
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: gold;
+    text-align: center;
+    padding: 15px 15px;
+}
+
+.topnav a:hover {
+    background-color: gray;
+}
+
+.topnav a.active {
+    background-color: gold;
+    color: maroon;
+}
+
