@@ -26,7 +26,9 @@
         ?>
         <h1>Welcome to the SER322 Pantry Project</h1>
         <h2>Created By Team 03</h2>
+
         <p>Login or create a new user.</p>
+
         <form action="pages/welcome.php" method="post">
             User Email:<br><input type="test" name="userEmail"><br>
             Password:<br><input type="password" name="password"><br>
