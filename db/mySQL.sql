@@ -19,7 +19,7 @@ CREATE TABLE users(
     email VARCHAR(50) NOT NULL,
     pass VARCHAR(30) NOT NULL);
 INSERT INTO users
-	(`user_id`, `firstName`, `lastName`, `email`, `pass`)
+	(`firstName`, `lastName`, `email`, `pass`)
 VALUES
 	('Terin', 'Champion', 'terinchampion@gmail.com', 'shesthechamp'),
 	('Nergal', 'Givarkes', 'ngivarke@asu.edu', 'nero'),
@@ -35,11 +35,11 @@ CREATE TABLE recipe(
     servings VARCHAR(20),
     likes INT DEFAULT 0);
 INSERT INTO recipe
-	(`recipe_id`, `title`, `instructions`, `servings`, `likes`)
+	(`title`, `instructions`, `servings`, `likes`)
 VALUES
-	('Chocolate Chip Cookies', '1. Buy chocolate chip cookies' + CHAR(13) + '2. Eat them', '12', 2),
-	('Vegan Quiche', '1. Get vegan ingredients' + CHAR(13) + '2. Mix ingredients' + CHAR(13) + '3. bake for 30 minutes', '6', 3),
-	('Berries Smoothie', '1. Get mixed berries' + CHAR(13) + '2. Add banana and yogurt ' + CHAR(13) + '3. Mix in food processor' + CHAR(13) + '4. Serve chilled', '2', 6);
+	('Chocolate Chip Cookies', '1. Buy chocolate chip cookies <br>2. Eat them', '12', 2),
+	('Vegan Quiche', '1. Get vegan ingredients <br>2. Mix ingredients <br>3. bake for 30 minutes', '6', 3),
+	('Berries Smoothie', '1. Get mixed berries<br>2. Add banana and yogurt<br>3. Mix in food processor<br>4. Serve chilled', '2', 6);
     
 CREATE TABLE item(
     item_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -48,12 +48,12 @@ CREATE TABLE item(
     description TEXT,
     amount VARCHAR(20));
 INSERT INTO item
-	(`item_id`, `brand`, `item_name`, `description`, `amount`)
+	(`brand`, `item_name`, `description`, `amount`)
 VALUES
-	('Hershey's', 'Chocolate Chips', '', '12 oz'),
-	('Land O'Lakes', 'Butter', '', '4 oz'),
+	('Hersheys', 'Chocolate Chips', '', '12 oz'),
+	('Land O Lakes', 'Butter', '', '4 oz'),
 	('Pillsbury', 'Flour', '', '16 oz'),
-	('Driscoll's', 'Blueberry', '', ''),
+	('Driscolls', 'Blueberry', '', ''),
 	('Chiquita', 'Banana', '', '1 piece'),
 	('Yoplait', 'Strawberry Yogurt', '', '6 oz');
 
