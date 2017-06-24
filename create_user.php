@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 /* 
- * SER 322 Team 14 Pantry Project
+ * SER 322 Team 03 Pantry Project
  * Terin Champion
  * Hajar Boughoula
  * Nergal Givarkes
@@ -21,6 +21,7 @@
     <body>
         <?php
             require_once '/config/config.php';
+            mysqli_select_db($conn, "ser322Pantry");
         ?>
         <h1>Create User</h1>
 
@@ -38,17 +39,10 @@
             if(isset($_POST['userEmail']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['password'])){
                 $sql = "INSERT INTO users (firstName, lastName, email, pass) VALUES ( '" . $_POST['firstName'] ."', '" . 
                         $_POST['lastName'] . "', '" . $_POST['userEmail'] . "', '" . $_POST['password'] . "')";
-                    
-                echo $sql;
-                echo '<br>';
                 
                 while(mysqli_more_results($conn)){mysqli_next_result($conn);}
                 
-                if ($conn->query($sql) === TRUE) {
-                    echo "New record created successfully";
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                }
+                $conn->query($sql);
                 
                 echo 'User ' . $_POST['userEmail'] . ' created<br>';
                 echo 'Return to Login Page and LOGIN!';
