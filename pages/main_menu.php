@@ -11,26 +11,12 @@
  * Created: Jun 18, 2017
  */
 -->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>SER322 Pantry Project - Main Menu</title>
-        <link rel="stylesheet" href="../styles/styles.css">
-
-    </head>
-    <body>
-        
-        <?php
-            
-        ?>
         <div class="topnav" id="topnav">
-            <a href="#pantry">View Pantry</a>
-            <a href="#shopping_list">View Shopping List</a>
-            <a href="#user_recipes">View My Recipes</a>
-            <a href="#find_item">Find Item</a>
-            <a href="#find_recipe">Find Recipe</a>
-            <a href="#create_recipe">Create Recipe</a>
+            <a href="pantry.php">View Pantry</a>
+            <a href="shopping_list.php">View Shopping List</a>
+            <a href="user_recipes.php">View My Recipes</a>
+            <a href="find_item.php">Find Item</a>
+            <a href="find_recipe.php">Find Recipe</a>
+            <a href="create_item.php">Create Item</a>
         </div>
-     
-    </body>
-</html>
+

@@ -29,6 +29,22 @@ form {
     text-align: center;
 }
 
+table {
+    
+    align-self: center;
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-color: gray;
+    color: black;
+    
+}
+
+th, td {
+    padding: 10px;
+    border: 3px solid black;
+    text-align: left;
+}
+
 .topnav{
     background-color: black;
     overflow: hidden;
@@ -51,4 +67,11 @@ form {
     background-color: gold;
     color: maroon;
 }
+
+.recipe{
+    background-color: gray;
+    border: 2px solid black;
+    text-align: left;
+}
+
 

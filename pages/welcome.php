@@ -23,10 +23,12 @@
             require '/../config/config.php';
             mysqli_select_db($conn, "ser322Pantry");
             
+            
             if(isset($_POST['userEmail']) && isset($_POST['password'])){
                 $sql = "SELECT * FROM users WHERE ( email = '" . $_POST['userEmail']  . "')";
                 
                 $result = mysqli_query($conn, $sql);
+                
                 
                if($result->num_rows != 1){
                    echo '<script type="text/javascript">';
@@ -45,10 +47,12 @@
                        echo '</script>';
                    }
                    else{
-                       $userID = $row["user_id"];
-                       $firstName = $row["firstName"];
+                       session_start();
+                       
+                       $_SESSION['userID'] = $row["user_id"];
+                       $_SESSION['firstName'] = $row["firstName"];
                        $lastName = $row["lastName"];
-                       echo "<h1>Welcome $firstName!</h1>";
+                       echo "<h1>Welcome " . $_SESSION['firstName'] ."!</h1>";
                        
                        require '/main_menu.php';
  

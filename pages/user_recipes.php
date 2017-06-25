@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
 /* 
@@ -9,121 +8,59 @@
  */
 /**
  * Author:  Terin
- * Created: Jun 22, 2017
+ * Created: Jun 18, 2017
  */
 -->
 <html>
     <head>
         <meta charset="UTF-8">
-      
-        
-        
+        <title>SER322 Pantry Project - User Recipes</title>
+        <link rel="stylesheet" href="../styles/styles.css">
+
     </head>
-    <body style="background-color: maroon">
-        
+    
         <?php
-        
+            session_start();
+            require '/../config/config.php';
+            mysqli_select_db($conn, "ser322Pantry");
+            
+            echo "<h1>Welcome " . $_SESSION['firstName'] ."!</h1>";
+            require '/main_menu.php';
         ?>
-   
-    <h1  style="color: maroon; background-color: gold; text-align: center;"; >--User Recipes--</h1>
-    
-    <table style="border: 0px; margin: 0px auto;">
-    
-    <tr style="background: gold; ">
+        <body>
+            <?php
+            //Select User's Recipes
+            $sql = "SELECT recipe.recipe_id, recipe.title, recipe.servings, recipe.likes, "
+                    . "(SELECT COUNT(d.user_id) FROM user_recipe d WHERE d.recipe_id = recipe.recipe_id) AS downloads "
+                    . "FROM recipe, users, user_recipe "
+                    . "WHERE (users.user_id = user_recipe.user_id "
+                    .   "AND user_recipe.recipe_id = recipe.recipe_id "
+                    .   "AND users.user_id = " . $_SESSION['userID']  . ")";
+                
+            $result = mysqli_query($conn, $sql);
+            
+            if($result->num_rows == 0){
+               echo '<br><p>No Downloaded Recipes!  <br>Go Find Something To Eat!!!</p>';
+            }
+            else{
 
-    <td style="width: 330px; text-align: center;"> View Recipes </td>
+               echo '<br><table><tr><th>Recipe</th><th>Servings</th><th>Likes</th><th>Downloads</th></tr>';
+               while($row = $result->fetch_assoc()){
+                   $_SESSION['recipeID'] = $row["recipe_id"];
+                   $recipe = $row["title"];
+                   $servings = $row["servings"];
+                   $likes = $row["likes"];
+                   $downloads = $row["downloads"];
+                   
+                   //Print Each Item
+                   echo "<tr><td><a href=\"recipe_info.php?recipe_id=" . $_SESSION['recipeID'] . "\">$recipe</a></td><td>$servings</td><td>$likes</td><td>$downloads</td></tr>";
 
-    <tr>
-        <td style="color: gold;">Enter userID
-        <input type="text" name="userID" size="3" maxlength="5" style="float :right" />
-        </td>
-     </tr>
+               }
 
-     <tr>
-        </tr><td style="color: gold;">   Enter recipeID                 
-        <input type="text" name="recipeID" size="3" maxlength="5" style="float :right" /> 
-        </td>
-    </tr>
-    
-    <tr>
-        <td colspan="2" style="text-align: center;">
-       <input type="submit" value="View Results" />
-       </td>
-    </tr> 
-    
-    <tr >
-        <td style="text-align: center;" >  <a href="welcome.php" style="color: gold">HOME</a>  </td>
-    </tr> 
-        
-    
-        
-    </table> 
+            }
+            
+        ?>
         
     </body>
-    
-</html>
-=======
-<!DOCTYPE html>
-<!--
-/* 
- * SER 322 Team 03 Pantry Project
- * Terin Champion
- * Hajar Boughoula
- * Nergal Givarkes
- */
-/**
- * Author:  Terin
- * Created: Jun 22, 2017
- */
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-      
-        
-        
-    </head>
-    <body style="background-color: maroon">
-        
-        <?php
-        
-        ?>
-   
-    <h1  style="color: maroon; background-color: gold; text-align: center;"; >--User Recipe--</h1>
-    
-    <table style="border: 0px; margin: 0px auto;">
-    
-    <tr style="background: gold; ">
-
-    <td style="width: 330px; text-align: center;"> View Recipes </td>
-
-    <tr>
-        <td style="color: gold;">Enter userID
-        <input type="text" name="userID" size="3" maxlength="5" style="float :right" />
-        </td>
-     </tr>
-
-     <tr>
-        </tr><td style="color: gold;">   Enter recipeID                 
-        <input type="text" name="recipeID" size="3" maxlength="5" style="float :right" /> 
-        </td>
-    </tr>
-    
-    <tr>
-        <td colspan="2" style="text-align: center;">
-       <input type="submit" value="View Results" />
-       </td>
-    </tr> 
-    
-    <tr >
-        <td style="text-align: center;" >  <a href="welcome.php" style="color: gold">HOME</a>  </td>
-    </tr> 
-        
-    
-        
-    </table> 
-        
-    </body>
-    
 </html>
 

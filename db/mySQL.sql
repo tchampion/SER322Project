@@ -81,7 +81,23 @@ CREATE TABLE ingredient(
     item_description VARCHAR(50) NOT NULL,
     quantity INT NOT NULL,
     PRIMARY KEY(recipe_id, item_description));
-    
+
+INSERT INTO ingredient
+    (`recipe_id`, `item_description`, `quantity`)
+VALUES
+    (1, 'Chocolate Chips', 2),
+    (1, 'Flour', 1),
+    (1, 'Sugar', 2),
+    (1, 'Eggs', 2),
+    (2, 'Pie Crust', 1),
+    (2, 'Spinach', 1),
+    (2, 'Eggs', 2),
+    (2, 'Yogurt', 1),
+    (2, 'Flour', 1),
+    (3, 'Vanilla Ice Cream', 1),
+    (3, 'Berries', 1),
+    (3, 'Milk', 1);
+
 CREATE TABLE pantry(
     pantry_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL REFERENCES users(user_id),

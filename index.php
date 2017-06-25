@@ -30,7 +30,7 @@
         <p>Login or create a new user.</p>
 
         <form action="pages/welcome.php" method="post">
-            User Email:<br><input type="test" name="userEmail"><br>
+            User Email:<br><input type="text" name="userEmail"><br>
             Password:<br><input type="password" name="password"><br>
             <input type="submit" name="submit" value="Login!"><br>
             <button type="button" name="create_user" onclick="window.location='create_user.php'">Create New User</button><br>
