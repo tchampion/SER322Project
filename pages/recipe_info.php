@@ -26,6 +26,7 @@
             
             echo "<h1>Welcome " . $_SESSION['firstName'] ."!</h1>";
             require '/main_menu.php';
+            echo "<h2>RECIPE INFO</h2>";
         ?>
         <body>
             <?php
@@ -60,6 +61,7 @@
                             . "WHERE (ingredient.recipe_id = " . $_SESSION['recipeID']  . ")";
 
                     $result = mysqli_query($conn, $sql);
+                    
 
                     if($result->num_rows == 0){
                        echo '<br><p>No Ingredients Found!  <br></p>';

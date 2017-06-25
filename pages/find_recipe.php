@@ -26,6 +26,7 @@
             
             echo "<h1>Welcome " . $_SESSION['firstName'] ."!</h1>";
             require '/main_menu.php';
+            echo "<h2>FIND RECIPE</h2>";
         ?>
         <body>
             <form action="find_recipe.php" method="post">

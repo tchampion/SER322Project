@@ -26,6 +26,7 @@
             
             echo "<h1>Welcome " . $_SESSION['firstName'] ."!</h1>";
             require '/main_menu.php';
+            echo "<h2>USER SHOPPING LIST</h2>";
         ?>
         <body>
             <?php
